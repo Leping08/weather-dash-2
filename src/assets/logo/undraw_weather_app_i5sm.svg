@@ -1,0 +1,15 @@
+<svg id="b50c90a1-13f8-40ae-8a07-2cff909416b3" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="881" height="722.6285" viewBox="0 0 881 722.6285">
+   <title>weather app</title>
+   <path d="M929.0078,664.12182A147.00755,147.00755,0,0,0,691.71969,548.10269a159.07307,159.07307,0,0,0-271.92184,55.72683,118.634,118.634,0,1,0-78.81678,207.299c1.84378,0,3.67613-.04812,5.49935-.13134,1.88272.0816,3.77367.13134,5.67649.13134h445.3187A128.96348,128.96348,0,0,0,925.82678,694.64159,147.58681,147.58681,0,0,0,929.0078,664.12182Z" transform="translate(-159.5 -88.8715)" fill="#6c63ff"/>
+   <path d="M934.0078,646.12182A147.00755,147.00755,0,0,0,696.71969,530.10269a159.07307,159.07307,0,0,0-271.92184,55.72683,118.634,118.634,0,1,0-78.81678,207.299c1.84378,0,3.67613-.04812,5.49935-.13134,1.88272.0816,3.77367.13134,5.67649.13134h445.3187A128.96348,128.96348,0,0,0,930.82678,676.64159,147.58681,147.58681,0,0,0,934.0078,646.12182Z" transform="translate(-159.5 -88.8715)" fill="none" stroke="#edecf4" stroke-miterlimit="10"/>
+   <circle cx="192.67483" cy="368.80265" r="93.44501" fill="#6c63ff"/>
+   <rect x="170.07702" y="165.0559" width="45.80638" height="92.34565" rx="22.90316" fill="#6c63ff"/>
+   <rect x="465.88736" y="332.97883" width="45.80638" height="92.34565" rx="22.90316" transform="translate(413.25024 -322.60071) rotate(60)" fill="#6c63ff"/>
+   <rect x="192.65593" y="490.02383" width="45.80638" height="92.34565" rx="22.90316" transform="translate(-300.52123 902.10317) rotate(-120)" fill="#6c63ff"/>
+   <rect x="192.96131" y="332.4499" width="45.80638" height="92.34565" rx="22.90316" transform="translate(-379.46465 287.38402) rotate(-60)" fill="#6c63ff"/>
+   <circle cx="203.67483" cy="357.80265" r="93.44501" fill="none" stroke="#edecf4" stroke-miterlimit="10"/>
+   <rect x="181.07702" y="154.0559" width="45.80638" height="92.34565" rx="22.90316" fill="none" stroke="#edecf4" stroke-miterlimit="10"/>
+   <rect x="476.88736" y="321.97883" width="45.80638" height="92.34565" rx="22.90316" transform="translate(409.22396 -337.62699) rotate(60)" fill="none" stroke="#edecf4" stroke-miterlimit="10"/>
+   <rect x="203.65593" y="479.02383" width="45.80638" height="92.34565" rx="22.90316" transform="translate(-274.49495 895.12945) rotate(-120)" fill="none" stroke="#edecf4" stroke-miterlimit="10"/>
+   <rect x="203.96131" y="321.4499" width="45.80638" height="92.34565" rx="22.90316" transform="translate(-364.43837 291.4103) rotate(-60)" fill="none" stroke="#edecf4" stroke-miterlimit="10"/>
+</svg>

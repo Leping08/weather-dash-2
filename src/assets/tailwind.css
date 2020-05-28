@@ -1,0 +1,17 @@
+@tailwind base;
+
+@tailwind components;
+
+
+.sky {
+    background: rgba(0,0,0,1);
+    background: linear-gradient(to right, rgba(7, 11, 52 ,1) 0%, rgba(7, 11, 52 ,1) 11%, rgba(217,171,43,1) 26%, rgba(49, 144, 197,1) 45%, rgba(49, 144, 197,1) 61%, rgba(219,104,4,1) 77%, rgba(7, 11, 52,1) 90%, rgba(7, 11, 52,1) 100%);
+    /* background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 11%, rgba(217,171,43,1) 26%, rgba(0,0,247,1) 45%, rgba(0,0,247,1) 61%, rgba(219,104,4,1) 77%, rgba(0,0,0,1) 90%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(11%, rgba(0,0,0,1)), color-stop(26%, rgba(217,171,43,1)), color-stop(45%, rgba(0,0,247,1)), color-stop(61%, rgba(0,0,247,1)), color-stop(77%, rgba(219,104,4,1)), color-stop(90%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 11%, rgba(217,171,43,1) 26%, rgba(0,0,247,1) 45%, rgba(0,0,247,1) 61%, rgba(219,104,4,1) 77%, rgba(0,0,0,1) 90%, rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 11%, rgba(217,171,43,1) 26%, rgba(0,0,247,1) 45%, rgba(0,0,247,1) 61%, rgba(219,104,4,1) 77%, rgba(0,0,0,1) 90%, rgba(0,0,0,1) 100%);
+    background: -ms-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 11%, rgba(217,171,43,1) 26%, rgba(0,0,247,1) 45%, rgba(0,0,247,1) 61%, rgba(219,104,4,1) 77%, rgba(0,0,0,1) 90%, rgba(0,0,0,1) 100%);
+    */
+}
+
+@tailwind utilities;
