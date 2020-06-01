@@ -4,11 +4,10 @@
             {{ currentTime.toLocaleString() }}
         </div>
         <div class="m-4">
-            <div class="flex items-center h-6 sky rounded shadow-inner w-full mx-auto">
+            <div class="flex items-center h-6 sky rounded shadow-inner w-full mx-auto rounded-full">
                 <div class="h-10 bg-gray-400 w-1 rounded" v-bind:style="{ 'margin-left': percentDoneWithDay + '%' }"></div>
             </div>
         </div>
-        {{ percentDoneWithDay }}
     </div>
 </template>
 
