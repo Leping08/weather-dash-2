@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-600 w-full p-4">
+  <div class="bg-gray-600 w-full h-screen p-4">
     <div
       class="flex text-gray-400 items-center justify-center sm:items-stretch sm:justify-start py-2"
     >
