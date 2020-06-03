@@ -4,7 +4,7 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import "@/assets/tailwind.css";
-import http from './http';
+import http from "./http";
 import VueApexCharts from "vue-apexcharts";
 
 Vue.use(VueApexCharts);

@@ -8,16 +8,14 @@
         <time-card />
       </div>
     </div>
-    <div class="flex">
-      
-    </div>
+    <div class="flex"></div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import timeCard from "../components/Time";
-import goes from "../components/Goes"
+import goes from "../components/Goes";
 export default {
   name: "Home",
   components: {

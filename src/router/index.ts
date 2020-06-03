@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
@@ -8,8 +7,7 @@ const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "home",
-    component: () =>
-      import(/* webpackChunkName: "home" */ "../views/Home.vue")
+    component: () => import(/* webpackChunkName: "home" */ "../views/Home.vue")
   },
   {
     path: "/radar",
@@ -26,15 +24,14 @@ const routes: Array<RouteConfig> = [
   {
     path: "/live",
     name: "live",
-    component: () =>
-      import(/* webpackChunkName: "live" */ "../views/Live.vue")
+    component: () => import(/* webpackChunkName: "live" */ "../views/Live.vue")
   }
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  linkExactActiveClass: 'text-white bg-gray-900',
+  linkExactActiveClass: "text-white bg-gray-900",
   routes
 });
 
