@@ -17,7 +17,7 @@
       </template>
     </div>
     <div>
-      <img :src="selectedImage.gif" alt="" />
+      <img :src="selectedImage.gif" class="object-cover w-full" alt="" />
     </div>
   </div>
 </template>
