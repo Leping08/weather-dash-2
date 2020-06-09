@@ -25,9 +25,46 @@ export default {
           type: "area",
           data: []
         }
-      ],
-      chartOptions: {
-        tooltip: {
+      ]
+    };
+  },
+  mounted() {
+    this.fetchData()
+  },
+  watch: {
+    timeFrame: function() {
+      this.fetchData()
+    }
+  },
+  methods: {
+    fetchData() {
+      if (this.timeFrame === "live") {
+        this.apiCall()
+        this.interval = setInterval(() => {
+          this.apiCall()
+        }, 60000); //5 min
+      } else {
+        clearInterval(this.interval)
+        this.apiCall();
+      }
+    },
+    async apiCall() {
+      const response = await this.$http.get(
+        "/api/weather-data?measurement=pressure&time_frame=" + this.timeFrame
+      );
+      this.series[0].data = response.data.map(function(data) {
+        return { x: Date.parse(data.measurement_time), y: data.millibars }
+      });
+      this.$refs.chart.updateSeries(this.series, true)
+    }
+  },
+  beforeDestroy() {
+    clearInterval(this.interval)
+  },
+  computed: {
+    chartOptions: function () {
+      return {
+          tooltip: {
           enabled: true,
           x: {
             show: true,
@@ -81,10 +118,13 @@ export default {
         xaxis: {
           type: "datetime",
           labels: {
-            formatter: function(value, timestamp) {
-              //const date = new Date(timestamp);
-              //return date.toLocalDate() + " " + date.toLocaleTimeString()
-              return new Date(value).toLocaleTimeString();
+            formatter: (value, timestamp) => {
+              if (this.timeFrame == 'week' || this.timeFrame == 'month') {
+                const date = new Date(timestamp);
+                return date.toLocaleDateString() + " " + date.toLocaleTimeString()
+              } else  {
+                return new Date(value).toLocaleTimeString();
+              }
             },
             style: {
               colors: "white"
@@ -101,40 +141,7 @@ export default {
           }
         }
       }
-    };
-  },
-  mounted() {
-    this.fetchData();
-  },
-  watch: {
-    timeFrame: function() {
-      this.fetchData();
     }
-  },
-  methods: {
-    fetchData() {
-      if (this.timeFrame === "live") {
-        this.apiCall();
-        this.interval = setInterval(() => {
-          this.apiCall();
-        }, 60000); //5 min
-      } else {
-        clearInterval(this.interval);
-        this.apiCall();
-      }
-    },
-    async apiCall() {
-      const response = await this.$http.get(
-        "/api/weather-data?measurement=pressure&time_frame=" + this.timeFrame
-      );
-      this.series[0].data = response.data.map(function(data) {
-        return { x: Date.parse(data.measurement_time), y: data.millibars };
-      });
-      this.$refs.chart.updateSeries(this.series, true);
-    }
-  },
-  beforeDestroy() {
-    clearInterval(this.interval);
   }
 };
 </script>
