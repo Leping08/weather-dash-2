@@ -82,7 +82,7 @@ export default {
               zoomin: true,
               zoomout: true,
               pan: true,
-              reset: true | '<img src="/static/icons/reset.png" width="20">',
+              reset: true,
               customIcons: []
             },
             autoSelected: "zoom"
