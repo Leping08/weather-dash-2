@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-800 p-4 rounded-lg">
     <div class="text-center text-gray-500">
-      Pressure
+      {{ this.measurement | capitalize }}
     </div>
     <apexchart
       type="line"
@@ -15,13 +15,13 @@
 
 <script>
 export default {
-  props: ["timeFrame"],
+  props: ["timeFrame", "measurement", "unit", "color", "reading"],
   data() {
     return {
       interval: null,
       series: [
         {
-          name: "mb",
+          name: "",
           type: "area",
           data: []
         }
@@ -29,6 +29,7 @@ export default {
     };
   },
   mounted() {
+    this.series[0].name = this.unit
     this.fetchData()
   },
   watch: {
@@ -50,16 +51,23 @@ export default {
     },
     async apiCall() {
       const response = await this.$http.get(
-        "/api/weather-data?measurement=pressure&time_frame=" + this.timeFrame
+        "/api/weather-data?measurement=" + this.measurement + "&time_frame=" + this.timeFrame
       );
-      this.series[0].data = response.data.map(function(data) {
-        return { x: Date.parse(data.measurement_time), y: data.millibars }
+      this.series[0].data = response.data.map((data) => {
+        return { x: Date.parse(data.measurement_time), y: data[this.reading] }
       });
       this.$refs.chart.updateSeries(this.series, true)
     }
   },
   beforeDestroy() {
     clearInterval(this.interval)
+  },
+  filters: {
+    capitalize: function (value) {
+        if (!value) return ''
+        value = value.toString()
+        return value.charAt(0).toUpperCase() + value.slice(1)
+    }
   },
   computed: {
     chartOptions: function () {
@@ -88,7 +96,7 @@ export default {
             autoSelected: "zoom"
           }
         },
-        colors: ["#4DC0B5"],
+        colors: [this.color],
         zoom: {
           type: "x",
           enabled: true

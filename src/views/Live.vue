@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-600 w-full h-screen p-4">
+  <div class="bg-gray-600 w-full h-fulls p-4">
     <div
       class="flex text-gray-400 items-center justify-center sm:items-stretch sm:justify-start py-2"
     >
@@ -33,19 +33,29 @@
         Month
       </div>
     </div>
-    <div class="flex">
+    <div class="flex my-4">
       <div class="flex-1">
-        <pressure :time-frame="timeFrame" />
+        <graph :time-frame="timeFrame" measurement="pressure" unit="mb" reading="millibars" color="#38B2AC"/>
+      </div>
+    </div>
+    <div class="flex my-4">
+      <div class="flex-1">
+        <graph :time-frame="timeFrame" measurement="temperature" unit="°F" reading="degrees" color="#667EEA"/>
+      </div>
+    </div>
+    <div class="flex my-4">
+      <div class="flex-1">
+        <graph :time-frame="timeFrame" measurement="humidity" unit="Humidity %" reading="percentage" color="#4299E1"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import pressure from "../components/graphs/Pressure";
+import graph from "../components/graphs/Line";
 export default {
   components: {
-    pressure
+    graph
   },
   data() {
     return {
