@@ -44,16 +44,12 @@
         <div
           class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start"
         >
-          <div class="flex-shrink-0 mb-4">
-            <img
-              class="block h-12 w-auto"
-              src="./../../assets/logo/undraw_weather_app_i5sm.svg"
-              alt="Workflow logo"
-            />
-          </div>
-          <div class="hidden sm:block sm:ml-2">
-            <div class="flex h-full items-center">
-              <span class="text-gray-300 text-2xl uppercase">Mist</span>
+          <div class="flex items-center">
+            <div class="">
+              <span class="mdi mdi-weather-partly-lightning text-gray-100 text-4xl"></span>
+            </div>
+            <div class="hidden sm:block sm:ml-2">
+              <span class="text-gray-100 text-2xl">Derk Weather</span>
             </div>
           </div>
           <div class="hidden sm:block sm:ml-6">
