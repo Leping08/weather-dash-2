@@ -35,24 +35,42 @@
     </div>
     <div class="flex my-4">
       <div class="flex-1">
-        <graph :time-frame="timeFrame" measurement="pressure" unit="mb" reading="millibars" color="#38B2AC"/>
+        <graph
+          :time-frame="timeFrame"
+          measurement="pressure"
+          unit="mb"
+          reading="millibars"
+          color="#38B2AC"
+        />
       </div>
     </div>
     <div class="flex my-4">
       <div class="flex-1">
-        <graph :time-frame="timeFrame" measurement="temperature" unit="°F" reading="degrees" color="#667EEA"/>
+        <graph
+          :time-frame="timeFrame"
+          measurement="temperature"
+          unit="°F"
+          reading="degrees"
+          color="#667EEA"
+        />
       </div>
     </div>
     <div class="flex my-4">
       <div class="flex-1">
-        <graph :time-frame="timeFrame" measurement="humidity" unit="Humidity %" reading="percentage" color="#4299E1"/>
+        <graph
+          :time-frame="timeFrame"
+          measurement="humidity"
+          unit="Humidity %"
+          reading="percentage"
+          color="#4299E1"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import graph from "../components/graphs/Line";
+import graph from "@/components/graphs/Line";
 export default {
   components: {
     graph

@@ -4,7 +4,7 @@
       {{ this.measurement | capitalize }}
     </div>
     <apexchart
-      type="line"
+      type="area"
       height="500"
       :options="chartOptions"
       :series="series"
@@ -15,7 +15,28 @@
 
 <script>
 export default {
-  props: ["timeFrame", "measurement", "unit", "color", "reading"],
+  props: {
+    timeFrame: {
+      type: String,
+      required: true
+    },
+    measurement: {
+      type: String,
+      required: true
+    },
+    unit: {
+      type: String,
+      required: true
+    },
+    color: {
+      type: String,
+      required: true
+    },
+    reading: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
       interval: null,
@@ -29,55 +50,61 @@ export default {
     };
   },
   mounted() {
-    this.series[0].name = this.unit
-    this.fetchData()
+    this.series[0].name = this.unit;
+    this.fetchData();
   },
   watch: {
     timeFrame: function() {
-      this.fetchData()
+      this.fetchData();
     }
   },
   methods: {
     fetchData() {
       if (this.timeFrame === "live") {
-        this.apiCall()
+        this.apiCall();
         this.interval = setInterval(() => {
-          this.apiCall()
+          this.apiCall();
         }, 60000); //5 min
       } else {
-        clearInterval(this.interval)
+        clearInterval(this.interval);
         this.apiCall();
       }
     },
     async apiCall() {
       const response = await this.$http.get(
-        "/api/weather-data?measurement=" + this.measurement + "&time_frame=" + this.timeFrame
+        "/api/weather-data?measurement=" +
+          this.measurement +
+          "&time_frame=" +
+          this.timeFrame
       );
-      this.series[0].data = response.data.map((data) => {
-        return { x: Date.parse(data.measurement_time), y: data[this.reading] }
+      this.series[0].data = response.data.map(data => {
+        return { x: Date.parse(data.measurement_time), y: data[this.reading] };
       });
-      this.$refs.chart.updateSeries(this.series, true)
+      this.$refs.chart.updateSeries(this.series, true);
     }
   },
   beforeDestroy() {
-    clearInterval(this.interval)
+    clearInterval(this.interval);
   },
   filters: {
-    capitalize: function (value) {
-        if (!value) return ''
-        value = value.toString()
-        return value.charAt(0).toUpperCase() + value.slice(1)
+    capitalize: function(value) {
+      if (!value) return "";
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
     }
   },
   computed: {
-    chartOptions: function () {
+    chartOptions() {
       return {
-          tooltip: {
+        tooltip: {
           enabled: true,
           x: {
             show: true,
             format: "hh:mm:ss"
           }
+        },
+        dataLabels: {
+          enabled: false
         },
         chart: {
           toolbar: {
@@ -127,10 +154,12 @@ export default {
           type: "datetime",
           labels: {
             formatter: (value, timestamp) => {
-              if (this.timeFrame == 'week' || this.timeFrame == 'month') {
+              if (this.timeFrame == "week" || this.timeFrame == "month") {
                 const date = new Date(timestamp);
-                return date.toLocaleDateString() + " " + date.toLocaleTimeString()
-              } else  {
+                return (
+                  date.toLocaleDateString() + " " + date.toLocaleTimeString()
+                );
+              } else {
                 return new Date(value).toLocaleTimeString();
               }
             },
@@ -143,12 +172,13 @@ export default {
           decimalsInFloat: 2,
           forceNiceScale: true,
           labels: {
+            show: false,
             style: {
               colors: "white"
             }
           }
         }
-      }
+      };
     }
   }
 };

@@ -11,10 +11,17 @@
         </div>
         <div class="flex items-center px-2">
           <div>
-            <a :href="selectedRegion.images[satelliteImageIndex].info" target="_blank" class="mdi mdi-information-outline text-gray-300"></a>
+            <a
+              :href="selectedRegion.images[satelliteImageIndex].info"
+              target="_blank"
+              class="mdi mdi-information-outline text-gray-300"
+            ></a>
           </div>
           <div>
-            <select class="bg-gray-800 rounded mx-2 border text-gray-300 border-gray-300" v-model="satelliteImageIndex">
+            <select
+              class="bg-gray-800 rounded mx-2 border text-gray-300 border-gray-300"
+              v-model="satelliteImageIndex"
+            >
               <option :value="1">Sandwich</option>
               <option :value="2">Geo Color</option>
               <option :value="0">Air Mass</option>
@@ -35,20 +42,25 @@
             "
             :key="index"
             @click="selectedRegion = region"
-            >
-              {{ region.title }}
+          >
+            {{ region.title }}
           </div>
         </template>
       </div>
       <div>
-        <img :src="selectedRegion.images[satelliteImageIndex].gif" @load="imageLoaded" class="object-cover w-full" alt="" />
+        <img
+          :src="selectedRegion.images[satelliteImageIndex].gif"
+          @load="imageLoaded"
+          class="object-cover w-full"
+          alt=""
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import LoadingSpinner from '@/components/LoadingSpinner'
+import LoadingSpinner from "@/components/LoadingSpinner";
 export default {
   components: {
     LoadingSpinner
@@ -63,19 +75,25 @@ export default {
           title: "Gulf of Mexico",
           images: [
             {
-              name: 'Air Mass',
-              gif: "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/GM/AirMass/GOES16-GM-AirMass-1000x1000.gif",
-              info: "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_GOESR_AirMassRGB_final.pdf"
+              name: "Air Mass",
+              gif:
+                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/GM/AirMass/GOES16-GM-AirMass-1000x1000.gif",
+              info:
+                "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_GOESR_AirMassRGB_final.pdf"
             },
             {
-              name: 'Sandwich',
-              gif: "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/GM/Sandwich/GOES16-GM-Sandwich-1000x1000.gif",
-              info: "https://www.star.nesdis.noaa.gov/GOES/documents/SandwichProduct.pdf"
+              name: "Sandwich",
+              gif:
+                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/GM/Sandwich/GOES16-GM-Sandwich-1000x1000.gif",
+              info:
+                "https://www.star.nesdis.noaa.gov/GOES/documents/SandwichProduct.pdf"
             },
             {
-              name: 'Geo Color',
-              gif: "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/GM/GEOCOLOR/GOES16-GM-GEOCOLOR-1000x1000.gif",
-              info: "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_CIRA_Geocolor_20171019.pdf"
+              name: "Geo Color",
+              gif:
+                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/GM/GEOCOLOR/GOES16-GM-GEOCOLOR-1000x1000.gif",
+              info:
+                "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_CIRA_Geocolor_20171019.pdf"
             }
           ]
         },
@@ -83,19 +101,25 @@ export default {
           title: "Caribbean",
           images: [
             {
-              name: 'Air Mass',
-              gif: "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CAR/AirMass/GOES16-CAR-AirMass-1000x1000.gif",
-              info: "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_GOESR_AirMassRGB_final.pdf"
+              name: "Air Mass",
+              gif:
+                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CAR/AirMass/GOES16-CAR-AirMass-1000x1000.gif",
+              info:
+                "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_GOESR_AirMassRGB_final.pdf"
             },
             {
-              name: 'Sandwich',
-              gif: "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CAR/Sandwich/GOES16-CAR-Sandwich-1000x1000.gif",
-              info: "https://www.star.nesdis.noaa.gov/GOES/documents/SandwichProduct.pdf"
+              name: "Sandwich",
+              gif:
+                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CAR/Sandwich/GOES16-CAR-Sandwich-1000x1000.gif",
+              info:
+                "https://www.star.nesdis.noaa.gov/GOES/documents/SandwichProduct.pdf"
             },
             {
-              name: 'Geo Color',
-              gif: "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CAR/GEOCOLOR/GOES16-CAR-GEOCOLOR-1000x1000.gif",
-              info: "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_CIRA_Geocolor_20171019.pdf"
+              name: "Geo Color",
+              gif:
+                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CAR/GEOCOLOR/GOES16-CAR-GEOCOLOR-1000x1000.gif",
+              info:
+                "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_CIRA_Geocolor_20171019.pdf"
             }
           ]
         },
@@ -103,19 +127,25 @@ export default {
           title: "US East",
           images: [
             {
-              name: 'Air Mass',
-              gif: "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/EUS/AirMass/GOES16-EUS-AirMass-1000x1000.gif",
-              info: "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_GOESR_AirMassRGB_final.pdf"
+              name: "Air Mass",
+              gif:
+                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/EUS/AirMass/GOES16-EUS-AirMass-1000x1000.gif",
+              info:
+                "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_GOESR_AirMassRGB_final.pdf"
             },
             {
-              name: 'Sandwich',
-              gif: "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/EUS/Sandwich/GOES16-EUS-Sandwich-1000x1000.gif",
-              info: "https://www.star.nesdis.noaa.gov/GOES/documents/SandwichProduct.pdf"
+              name: "Sandwich",
+              gif:
+                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/EUS/Sandwich/GOES16-EUS-Sandwich-1000x1000.gif",
+              info:
+                "https://www.star.nesdis.noaa.gov/GOES/documents/SandwichProduct.pdf"
             },
             {
-              name: 'Geo Color',
-              gif: "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/EUS/GEOCOLOR/GOES16-EUS-GEOCOLOR-1000x1000.gif",
-              info: "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_CIRA_Geocolor_20171019.pdf"
+              name: "Geo Color",
+              gif:
+                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/EUS/GEOCOLOR/GOES16-EUS-GEOCOLOR-1000x1000.gif",
+              info:
+                "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_CIRA_Geocolor_20171019.pdf"
             }
           ]
         }

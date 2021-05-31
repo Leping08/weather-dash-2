@@ -46,7 +46,9 @@
         >
           <div class="flex items-center">
             <div class="">
-              <span class="mdi mdi-weather-partly-lightning text-gray-100 text-4xl"></span>
+              <span
+                class="mdi mdi-weather-partly-lightning text-gray-100 text-4xl"
+              ></span>
             </div>
             <div class="hidden sm:block sm:ml-2">
               <span class="text-gray-100 text-2xl">Derk Weather</span>

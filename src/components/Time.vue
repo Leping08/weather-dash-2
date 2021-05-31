@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
   data() {
     return {
@@ -49,10 +49,13 @@ export default {
   },
   mounted() {
     this.currentTime = new Date();
-    this.timeInterval = setInterval(() => (this.currentTime = new Date()), 1000);
+    this.timeInterval = setInterval(
+      () => (this.currentTime = new Date()),
+      1000
+    );
     this.updateDayPercent();
     this.dayPercentInterval = setInterval(() => this.updateDayPercent(), 60000);
-    this.getLocation()
+    this.getLocation();
   },
   methods: {
     updateDayPercent() {
@@ -63,19 +66,21 @@ export default {
     },
     async getLocation() {
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(this.success, this.error);//This is calling the methods
+        navigator.geolocation.getCurrentPosition(this.success, this.error); //This is calling the methods
       } else {
         console.log("Geolocation is not supported by this browser.");
       }
     },
     success(pos) {
-      this.getTimes(pos.coords.latitude, pos.coords.longitude)
+      this.getTimes(pos.coords.latitude, pos.coords.longitude);
     },
     error(err) {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     },
     async getTimes(lat, lng) {
-      const response = await axios.get(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&formatted=0`)
+      const response = await axios.get(
+        `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&formatted=0`
+      );
       this.sunRiseTime = response.data.results.sunrise;
       this.sunSetTime = response.data.results.sunset;
     }

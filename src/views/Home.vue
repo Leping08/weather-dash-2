@@ -11,7 +11,7 @@
 
 <script>
 // @ is an alias to /src
-import timeCard from "../components/Time";
+import timeCard from "@/components/Time";
 export default {
   name: "Home",
   components: {
