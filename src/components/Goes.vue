@@ -77,21 +77,21 @@ export default {
             {
               name: "Air Mass",
               gif:
-                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/GM/AirMass/GOES16-GM-AirMass-1000x1000.gif",
+                "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/gm/AirMass/GOES16-GM-AirMass-1000x1000.gif",
               info:
                 "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_GOESR_AirMassRGB_final.pdf"
             },
             {
               name: "Sandwich",
               gif:
-                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/GM/Sandwich/GOES16-GM-Sandwich-1000x1000.gif",
+                "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/gm/Sandwich/GOES16-GM-Sandwich-1000x1000.gif",
               info:
                 "https://www.star.nesdis.noaa.gov/GOES/documents/SandwichProduct.pdf"
             },
             {
               name: "Geo Color",
               gif:
-                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/GM/GEOCOLOR/GOES16-GM-GEOCOLOR-1000x1000.gif",
+                "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/gm/GEOCOLOR/GOES16-GM-GEOCOLOR-1000x1000.gif",
               info:
                 "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_CIRA_Geocolor_20171019.pdf"
             }
@@ -103,21 +103,21 @@ export default {
             {
               name: "Air Mass",
               gif:
-                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CAR/AirMass/GOES16-CAR-AirMass-1000x1000.gif",
+                "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/car/AirMass/GOES16-CAR-AirMass-1000x1000.gif",
               info:
                 "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_GOESR_AirMassRGB_final.pdf"
             },
             {
               name: "Sandwich",
               gif:
-                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CAR/Sandwich/GOES16-CAR-Sandwich-1000x1000.gif",
+                "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/car/Sandwich/GOES16-CAR-Sandwich-1000x1000.gif",
               info:
                 "https://www.star.nesdis.noaa.gov/GOES/documents/SandwichProduct.pdf"
             },
             {
               name: "Geo Color",
               gif:
-                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CAR/GEOCOLOR/GOES16-CAR-GEOCOLOR-1000x1000.gif",
+                "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/car/GEOCOLOR/GOES16-CAR-GEOCOLOR-1000x1000.gif",
               info:
                 "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_CIRA_Geocolor_20171019.pdf"
             }
@@ -129,21 +129,21 @@ export default {
             {
               name: "Air Mass",
               gif:
-                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/EUS/AirMass/GOES16-EUS-AirMass-1000x1000.gif",
+                "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/eus/AirMass/GOES16-EUS-AirMass-1000x1000.gif",
               info:
                 "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_GOESR_AirMassRGB_final.pdf"
             },
             {
               name: "Sandwich",
               gif:
-                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/EUS/Sandwich/GOES16-EUS-Sandwich-1000x1000.gif",
+                "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/eus/Sandwich/GOES16-EUS-Sandwich-1000x1000.gif",
               info:
                 "https://www.star.nesdis.noaa.gov/GOES/documents/SandwichProduct.pdf"
             },
             {
               name: "Geo Color",
               gif:
-                "https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/EUS/GEOCOLOR/GOES16-EUS-GEOCOLOR-1000x1000.gif",
+                "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/eus/GEOCOLOR/GOES16-EUS-GEOCOLOR-1000x1000.gif",
               info:
                 "https://www.star.nesdis.noaa.gov/GOES/documents/QuickGuide_CIRA_Geocolor_20171019.pdf"
             }
