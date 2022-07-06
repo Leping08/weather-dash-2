@@ -1,3 +1,4 @@
+
 name: Deploy
 
 # Controls when the workflow will run
@@ -20,10 +21,10 @@ jobs:
         node-version: '14'
 
     - name: Install npm packages
-        run: npm install
+      run: npm install
 
     - name: Build application
-        run: npm run build
+      run: npm run build
 
     - name: Configure AWS Credentials
     - uses: aws-actions/configure-aws-credentials@v1
@@ -36,7 +37,7 @@ jobs:
       run: aws s3 sync ./dist/ s3://derkweather --delete
 
     - name: Invalidate Cloudfront Distribution
-        run: |
-          aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION }} \
-            --paths "/*"
+      run: |
+        aws cloudfront create-invalidation \
+          --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION }} \
+          --paths "/*"
