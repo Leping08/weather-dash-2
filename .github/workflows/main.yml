@@ -1,17 +1,42 @@
-name: CI
-on: [push]
+name: Deploy
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '14'
+
+    - name: Install npm packages
+        run: npm install
+
+    - name: Build application
+        run: npm run build
+
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
+    - uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-west-2
-    - name: Build static site
-      run: yarn install && npm run-script build
+        aws-region: us-east-1
+
     - name: Deploy static site to S3 bucket
       run: aws s3 sync ./dist/ s3://derkweather --delete
+
+    - name: Invalidate Cloudfront Distribution
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION }} \
+            --paths "/*"
